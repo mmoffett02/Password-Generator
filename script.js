@@ -24,7 +24,7 @@ function writePassword() {
 function generatePassword(){
   var input = generatePrompts();
   var passwordLength = input.plength;
-  var userChoices= input.uChoices;
+  var userChoices = input.uChoices;
   for(var i = 0; i < passwordLength; i++){
     var randomIndex= Math.floor(Math.random() * userChoices.length)
     var finalPassword = userChoices[randomIndex];
@@ -39,7 +39,7 @@ function generatePrompts() {
     var upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     var special= "!+-_.@#$%^&*()^/;[]{}<>?~`.".split("");
     console.log ('Hey! You clicked the button')
-    var passwordLength= parseInt (prompt ("How many characters would you like to include? Must be between 8 and 128.")); 
+     var passwordLength= parseInt(prompt ("How many characters would you like to include? Must be between 8 and 128.")); 
     
       if (!passwordLength) {
         window.alert("You must enter a value between 8 and 128 characters.");
@@ -47,7 +47,7 @@ function generatePrompts() {
      if (isNaN (passwordLength) || passwordLength <8 || passwordLength >128) {
        passwordLength= window.prompt("You must enter a value etween 8 and 128 characters.");
      }
-  
+     var bullshit = window.confirm("hahahahheeee");
       if (window.confirm ("Include numeric characters?")){
       userChoices = userChoices.concat(numbs);}
   
@@ -60,8 +60,9 @@ function generatePrompts() {
       if (window.confirm ("Include lowercase characters?")){
       userChoices = userChoices.concat(lower);}
     
-      return { 
-        'plength': passwordLength.
+      // return password;
+      return {
+        'plength': passwordLength,
         'uChoices': userChoices
       }
-}
+    }
