@@ -32,7 +32,8 @@ function generatePassword(){
 
 function generatePrompts() {
     console.log ('Hey! You clicked the button')
-     var passwordLength= prompt ("How many characters would you like to include? Must be between 8 and 128."); 
+    characters= [];
+    var passwordLength= prompt ("How many characters would you like to include? Must be between 8 and 128."); 
     
       if (!passwordLength) {
         window.alert("You must enter a value between 8 and 128 characters.");
