@@ -8,4 +8,4 @@ The link to an image showing the website is below.
 
 
 The link to the active github website can be found here. 
-https://mmoffett02.github.io/Password-Generator/
+https://mmoffett02.github.io/Want-To-Make-A-Password/
