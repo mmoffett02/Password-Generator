@@ -22,18 +22,24 @@ function writePassword() {
 }
 
 function generatePassword(){
-  var passwordLength = generatePrompts();
+  var input = generatePrompts();
+  var passwordLength = input.plength;
+  var userChoices= input.uChoices;
   for(var i = 0; i < passwordLength; i++){
     var randomIndex= Math.floor(Math.random() * userChoices.length)
     var finalPassword = userChoices[randomIndex];
     product.push(finalPassword);
   }
+  return product.join('');
 }
 
 function generatePrompts() {
+    var numbs = "0123456789".split("");
+    var lower= "abcdefghijklmnopqrstuvwxyz".split("");
+    var upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+    var special= "!+-_.@#$%^&*()^/;[]{}<>?~`.".split("");
     console.log ('Hey! You clicked the button')
-    characters= [];
-    var passwordLength= prompt ("How many characters would you like to include? Must be between 8 and 128."); 
+    var passwordLength= parseInt (prompt ("How many characters would you like to include? Must be between 8 and 128.")); 
     
       if (!passwordLength) {
         window.alert("You must enter a value between 8 and 128 characters.");
@@ -42,16 +48,20 @@ function generatePrompts() {
        passwordLength= window.prompt("You must enter a value etween 8 and 128 characters.");
      }
   
-      if (numbs= window.confirm ("Include numeric characters?"));{
+      if (window.confirm ("Include numeric characters?")){
       userChoices = userChoices.concat(numbs);}
   
-      if (special= window.confirm ("Include special characters?"));{
+      if (window.confirm ("Include special characters?")){
       userChoices = userChoices.concat(special);}
 
-      if (upper=window.confirm ("Include uppercase characters?"));{
+      if (window.confirm ("Include uppercase characters?")){
       userChoices = userChoices.concat(upper);}
       
-      if (lower= window.confirm ("Include lowercase characters?"));{
+      if (window.confirm ("Include lowercase characters?")){
       userChoices = userChoices.concat(lower);}
     
-      return password;}
+      return { 
+        'plength': passwordLength.
+        'uChoices': userChoices
+      }
+}
