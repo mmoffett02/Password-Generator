@@ -2,11 +2,6 @@
 var userChoices= [];
 var characters =[];
 var product= [];
-var numbs = "0123456789".split("");
-var lower= "abcdefghijklmnopqrstuvwxyz".split("");
-var upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-var special= "!+-_.@#$%^&*()^/;[]{}<>?~`.".split("");
-
 
 var generateBtn = document.querySelector("#generate");
 
@@ -47,7 +42,6 @@ function generatePrompts() {
      if (isNaN (passwordLength) || passwordLength <8 || passwordLength >128) {
        passwordLength= window.prompt("You must enter a value etween 8 and 128 characters.");
      }
-     var bullshit = window.confirm("hahahahheeee");
       if (window.confirm ("Include numeric characters?")){
       userChoices = userChoices.concat(numbs);}
   
